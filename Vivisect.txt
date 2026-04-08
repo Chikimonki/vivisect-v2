@@ -1,0 +1,27 @@
+vivisect/
+├── README.md                         # The legend begins
+├── book/                             # Full manuscript (this file)
+├── blog/                             # Ready-to-publish posts
+├── targets/
+│   ├── patient_zero                  # Our eternal victim
+│   └── patient_zero_waits.c          # Debug version
+├── implants/
+│   ├── strcmp_hook.zig               # LD_PRELOAD version
+│   ├── fake_strcmp.zig               # GOT/PLT version
+│   └── trampoline_strcmp.zig         # Future inline version
+├── hooks/
+│   ├── elf_reader.lua                # Chapter 1
+│   ├── quick_patch.lua               # Chapter 1
+│   ├── ld_preload_hook.lua           # Chapter 2
+│   ├── read_got.lua                  # Chapter 3
+│   ├── find_function.lua             # Chapter 4
+│   ├── patch_strcmp.lua              # Chapter 4
+│   └── autohook.lua                  # Chapter 5 – The Final Weapon
+├── lib/
+│   ├── binary_info.lua               # Chapter 5
+│   └── hook_method.lua               # Chapter 5
+├── scripts/
+│   ├── install_arsenal.sh            # One-click setup
+│   └── final_check.sh                # Validation
+└── music/
+    └── playlist.txt                  # Your Riffusion folder lives here in spirit

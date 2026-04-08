@@ -1,0 +1,28 @@
+http://localhost:8080
+┌─────────────────────────────────────────────────────┐
+│  V I V I S E C T                                    │
+│  Binary Surgery Dashboard                           │
+├─────────────────────────────────────────────────────┤
+│  Target: [ /path/to/binary ]    [Browse] [Analyze] │
+│                                                     │
+│  ┌─ Binary Info                 ┌─ Tools           │
+│  │ Type: ELF64-x86-64           │ [ ] Hook         │
+│  │ Size: 850KB                  │ [ ] Debug        │
+│  │ Entropy: 7.89 (Packed!)      │ [ ] Unpack       │
+│  │ Packer: UPX                  │ [ ] ROP          │
+│  └──────────────────────────────┴──────────────────┤
+│                                                     │
+│  ┌─ Live Process List                               │
+│  │ PID   Name        Status                        │
+│  │ 789   patient_zero  Running (hooked)           │
+│  │ 790   malware.exe   Unpacking...               │
+│  └─────────────────────────────────────────────────┤
+│                                                     │
+│  ┌─ Output Console                                  │
+│  │ [Zig] free() hooked - injecting payload!       │
+│  │ [+] Fake object planted!                       │
+│  │ 🎉 RCE ACHIEVED!                                │
+│  │ $ whoami                                       │
+│  │ bob                                            │
+│  └─────────────────────────────────────────────────┘
+└─────────────────────────────────────────────────────┘

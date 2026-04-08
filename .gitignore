@@ -1,0 +1,33 @@
+# Compiled outputs
+*.so
+*.o
+*.a
+*.pyc
+__pycache__/
+
+# Binaries
+targets/patient_zero
+targets/patient_zero_waits
+targets/heap_uaf_final
+targets/symbolic_challenge
+targets/definitely_packable*
+targets/*.sealed
+
+# Exploits
+neural/exploit_*.py
+
+# Logs
+*.log
+oep_dump.bin
+unpacked_dump.bin
+trace.txt
+
+# Deployment
+deploy/
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
+*.swp

@@ -1,0 +1,20 @@
+vivisect/
+├── vivisect.lua              # One command to rule them all
+├── hooks/
+│   ├── autohook.lua
+│   ├── debugger.lua
+│   ├── unpack_final.lua
+│   └── rop_builder.lua
+├── lib/
+│   ├── binary_info.lua
+│   ├── hook_method.lua
+│   ├── ptrace.lua
+│   └── disasm.lua
+├── web/
+│   └── server.lua            # Your cyberpunk dashboard
+├── targets/
+│   ├── patient_zero
+│   └── symbolic_challenge
+├── implants/
+│   └── *.so files
+└── README.md

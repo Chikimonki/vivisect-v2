@@ -1,0 +1,12 @@
+VIVISECT/
+├── README.md                    ← Big red warnings
+├── RESPONSIBLE_USE.md           ← Ethics guide
+├── DISCLAIMER.md                ← Legal protection
+├── demo/
+│   └── vivisect_web_DEMO.lua   ← Safe public version
+├── live/                        ← Real operational code
+│   ├── vivisect_web_LIVE.lua
+│   ├── c2_server.lua
+│   └── [everything else]
+└── docs/
+    └── INSTALLATION.md

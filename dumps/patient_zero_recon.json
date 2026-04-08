@@ -1,0 +1,248 @@
+{
+  "path": "patient_zero",
+  "type": "ET_EXEC",
+  "machine": "EM_X86_64",
+  "entry": "0x4010B0",
+  "sections": [
+    {
+      "name": "",
+      "type": "SHT_NULL",
+      "addr": "0x0",
+      "size": 0,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".interp",
+      "type": "SHT_PROGBITS",
+      "addr": "0x400318",
+      "size": 28,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".note.gnu.property",
+      "type": "SHT_NOTE",
+      "addr": "0x400338",
+      "size": 48,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".note.gnu.build-id",
+      "type": "SHT_NOTE",
+      "addr": "0x400368",
+      "size": 36,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".note.ABI-tag",
+      "type": "SHT_NOTE",
+      "addr": "0x40038C",
+      "size": 32,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".gnu.hash",
+      "type": "SHT_GNU_HASH",
+      "addr": "0x4003B0",
+      "size": 36,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".dynsym",
+      "type": "SHT_DYNSYM",
+      "addr": "0x4003D8",
+      "size": 192,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".dynstr",
+      "type": "SHT_STRTAB",
+      "addr": "0x400498",
+      "size": 139,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".gnu.version",
+      "type": "SHT_GNU_VERSYM",
+      "addr": "0x400524",
+      "size": 16,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".gnu.version_r",
+      "type": "SHT_GNU_VERNEED",
+      "addr": "0x400538",
+      "size": 80,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".rela.dyn",
+      "type": "SHT_RELA",
+      "addr": "0x400588",
+      "size": 72,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".rela.plt",
+      "type": "SHT_RELA",
+      "addr": "0x4005D0",
+      "size": 96,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".init",
+      "type": "SHT_PROGBITS",
+      "addr": "0x401000",
+      "size": 27,
+      "executable": true,
+      "writable": false
+    },
+    {
+      "name": ".plt",
+      "type": "SHT_PROGBITS",
+      "addr": "0x401020",
+      "size": 80,
+      "executable": true,
+      "writable": false
+    },
+    {
+      "name": ".plt.sec",
+      "type": "SHT_PROGBITS",
+      "addr": "0x401070",
+      "size": 64,
+      "executable": true,
+      "writable": false
+    },
+    {
+      "name": ".text",
+      "type": "SHT_PROGBITS",
+      "addr": "0x4010B0",
+      "size": 497,
+      "executable": true,
+      "writable": false
+    },
+    {
+      "name": ".fini",
+      "type": "SHT_PROGBITS",
+      "addr": "0x4012A4",
+      "size": 13,
+      "executable": true,
+      "writable": false
+    },
+    {
+      "name": ".rodata",
+      "type": "SHT_PROGBITS",
+      "addr": "0x402000",
+      "size": 119,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".eh_frame_hdr",
+      "type": "SHT_PROGBITS",
+      "addr": "0x402078",
+      "size": 68,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".eh_frame",
+      "type": "SHT_PROGBITS",
+      "addr": "0x4020C0",
+      "size": 220,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".init_array",
+      "type": "SHT_INIT_ARRAY",
+      "addr": "0x403DF8",
+      "size": 8,
+      "executable": false,
+      "writable": true
+    },
+    {
+      "name": ".fini_array",
+      "type": "SHT_FINI_ARRAY",
+      "addr": "0x403E00",
+      "size": 8,
+      "executable": false,
+      "writable": true
+    },
+    {
+      "name": ".dynamic",
+      "type": "SHT_DYNAMIC",
+      "addr": "0x403E08",
+      "size": 464,
+      "executable": false,
+      "writable": true
+    },
+    {
+      "name": ".got",
+      "type": "SHT_PROGBITS",
+      "addr": "0x403FD8",
+      "size": 16,
+      "executable": false,
+      "writable": true
+    },
+    {
+      "name": ".got.plt",
+      "type": "SHT_PROGBITS",
+      "addr": "0x403FE8",
+      "size": 56,
+      "executable": false,
+      "writable": true
+    },
+    {
+      "name": ".data",
+      "type": "SHT_PROGBITS",
+      "addr": "0x404020",
+      "size": 16,
+      "executable": false,
+      "writable": true
+    },
+    {
+      "name": ".bss",
+      "type": "SHT_NOBITS",
+      "addr": "0x404040",
+      "size": 16,
+      "executable": false,
+      "writable": true
+    },
+    {
+      "name": ".comment",
+      "type": "SHT_PROGBITS",
+      "addr": "0x0",
+      "size": 45,
+      "executable": false,
+      "writable": false
+    },
+    {
+      "name": ".shstrtab",
+      "type": "SHT_STRTAB",
+      "addr": "0x0",
+      "size": 271,
+      "executable": false,
+      "writable": false
+    }
+  ],
+  "imports": [
+    "__libc_start_main",
+    "puts",
+    "strlen",
+    "__stack_chk_fail",
+    "__fprintf_chk"
+  ],
+  "interesting_strings": null
+}

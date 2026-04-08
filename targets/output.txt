@@ -1,0 +1,4 @@
+This binary WILL be packed with UPX
+Data size: 50000 bytes
+🔓 Hidden function found!
+Flag: FLAG{unpacking_works}

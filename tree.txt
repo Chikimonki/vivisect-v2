@@ -1,0 +1,15 @@
+vivisect/
+├── targets/
+│   ├── patient_zero          # Our first victim
+│   ├── patient_zero.c.sealed # Source code, chmod 000
+│   └── patient_zero_patched  # Post-surgery
+├── hooks/
+│   ├── elf_reader.lua        # ELF parser in pure LuaJIT
+│   ├── quick_patch.lua       # Binary patcher in pure LuaJIT
+│   └── (more coming in Ch 2)
+├── scripts/
+│   ├── install_arsenal.sh    # One-time setup
+│   └── recon/                # Go reconnaissance tool
+├── layouts/                  # Terminus configs (coming)
+├── dumps/                    # Disassembly, memory dumps
+└── docker/                   # Containment (Chapter 5)

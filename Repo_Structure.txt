@@ -1,0 +1,21 @@
+VIVISECT/
+├── README.md                  ← Big warnings + "This is not the Python tool"
+├── RESPONSIBLE_USE.md
+├── DISCLAIMER.md
+├── demo/
+│   └── vivisect_web_demo.lua  ← Safe public version
+├── live/
+│   ├── c2_server.lua
+│   ├── c2_agent.lua
+│   ├── memfd_agent2.lua
+│   └── web/
+│       └── vivisect_web_live.lua
+├── implants/
+│   ├── vivisect_lkm.c
+│   └── Makefile
+├── neural/
+│   ├── auto_pwn_standalone.lua
+│   └── hide_connections.lua
+├── docs/
+│   └── INSTALLATION.md
+└── LICENSE

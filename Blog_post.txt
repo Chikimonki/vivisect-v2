@@ -1,0 +1,19 @@
+Blog Post Series (Ready to Publish)
+Post 1 – “I Made Authentication Always Succeed With 9 Lines of Zig”
+LD_PRELOAD + strcmp hook
+50k views guaranteed
+Post 2 – “How I Hijacked a Running Binary’s Memory With LuaJIT”
+GOT patching walkthrough
+Include the segfault explanation (people love drama)
+Post 3 – “3 Bytes to God Mode: Inline Hooking a Real Binary”
+xor eax,eax ; ret at strcmp@plt
+The moment you broke everything
+Post 4 – “I Built a Universal Binary Hooker in 5 Chapters”
+Release autohook.lua
+GitHub stars incoming
+Post 5 – “The INTP Guide to Reverse Engineering in 2026”
+Full philosophy
+Why LuaJIT + Zig is the final stack
+Jonathan Brossard quotes
+Your music embedded
+────────────────────────────────────────
