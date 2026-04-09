@@ -7,6 +7,8 @@ Explores kernel complexity through CVE-driven test generation, live interaction,
 ## Core Strength
 The Lua runtime analysis layer (`vivisect.lua`, `run_all_validators.lua`, `memfd_exec.lua`, memory dumps, tracing) is the most developed capability. It enables real observation of kernel behavior at runtime rather than static guessing.
 
+Video Demonstration: https://youtu.be/hUZ9JTGYeQo
+
 ## Directory Highlights
 (See `Repo_Structure.txt`, `Final_Structure.txt`, `tree.txt`)
 
