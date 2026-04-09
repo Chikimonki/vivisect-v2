@@ -1,45 +1,56 @@
 # VIVISECT v2.0
 
-**A zero-budget Linux kernel research, dynamic analysis, and implant development platform.**
+**Zero-budget Linux kernel research & runtime analysis platform.**
 
-Built entirely in WSL2 + Docker Desktop with no financial cost. Combines automated vulnerability validation, runtime kernel probing, reverse engineering automation (Lua + Vivisect), memory dumping/unpacking, eBPF rootkits, UEFI implants, Zig payloads, C2 infrastructure, neural-inspired components, and a web dashboard.
+Explores kernel complexity through CVE-driven test generation, live interaction, Lua-based dynamic instrumentation, memory dumping/unpacking, eBPF, UEFI/Zig implants, and C2 scaffolding. Built entirely in WSL2 + Docker Desktop.
 
-## Vision
-The Linux kernel contains surprising complexity ("more than one way to do it" — similar to Perl). VIVISECT explores this complexity through practical experimentation: parsing CVEs, generating exploit primitives, live interaction with kernel subsystems, runtime memory analysis, and implant engineering. It is an educational and research platform, not a production weaponization tool.
+## Core Strength
+The Lua runtime analysis layer (`vivisect.lua`, `run_all_validators.lua`, `memfd_exec.lua`, memory dumps, tracing) is the most developed capability. It enables real observation of kernel behavior at runtime rather than static guessing.
 
-## Directory Structure
-(See `Repo_Structure.txt`, `Final_Structure.txt`, and `tree.txt` for full details)
+## Directory Highlights
+(See `Repo_Structure.txt`, `Final_Structure.txt`, `tree.txt`)
 
-- `kernel/` – Core validation suite (NFSv4, io_uring, futex, ksmbd tests)
-- `ebpf_rootkit/` – eBPF-based persistence and hooking
-- `uefi_implant/`, `chapter2_implant.zig`, `implants/` – Bootkits and userspace implants
-- `vivisect.lua`, `memfd_exec.lua`, `terminus_pane_0_top_left.lua` – Dynamic analysis and instrumentation
-- `dumps/` – Memory captures and unpacking artifacts
-- `neural/`, `web/` – Analysis and visualization components
-- `c2/`, `rop/`, `targets/` – Supporting infrastructure
-- `docker/`, `Dockerfile`, `deploy.sh` – Containerization
-- `scripts/`, `test.sh` – Automation
+- `kernel/` + `run_all_validators.lua` – Validation suite
+- `vivisect.lua`, `*.lua` – Dynamic instrumentation & tracing
+- `dumps/` – Live memory captures, OEP dumping, unpacking artifacts
+- `ebpf_rootkit/`, `uefi_implant/`, `chapter2_implant.zig` – Multi-layer implants
+- `neural/`, `web/`, `c2/` – Supporting analysis and infrastructure
+- `docker/`, `Dockerfile`, `deploy.sh` – Reproducible environments
 
-## Capabilities Proven
-- CVE parsing and bug description extraction
-- Automatic generation of exploit patterns (e.g. 1024-byte owner strings)
-- Live kernel service interaction (NFSd port 2049, io_uring, futex)
-- Runtime memory dumping, tracing, and analysis
-- Response classification (patched / vulnerable / missing)
-- Multi-layer implant development (UEFI → kernel → userspace)
-
-## Validation Results (WSL 6.6.87.2-microsoft-standard-WSL2)
-- NFSv4 LOCK heap overflow: ❌ VULNERABLE (harness triggered)
-- io_uring OOB read: ❌ VULNERABLE
-- futex flags mismatch: ❌ VULNERABLE
-- ksmbd share_conf UAF: ⚠ MISSING (module unavailable)
-- ksmbd signedness bug: ⚠ MISSING (module unavailable)
-
-**Important Note**: These results reflect the behavior of the custom test harness against this specific kernel/config. They do not constitute confirmed production 0-days. Modern mitigations make reliable exploitation non-trivial.
-
-## Quick Start
+## Docker Quick Start
 ```bash
-# Build environment
-docker build -t vivisect .
-./deploy.sh
-./test.sh
+docker build -t vivisect:v2 .
+docker run --rm -it --privileged -v $(pwd):/vivisect vivisect:v2
+# Inside: ./run_all_validators.lua 2>&1 | tee validator_run.log
+
+# Lessons Learned – VIVISECT v2.0
+
+**Author:** Chikimonki - An INTP systems explorer  
+**Date:** April 2026  
+**Budget:** $0
+
+### What Was Achieved
+- End-to-end pipeline: CVE parsing → synthetic payload generation (1024-byte owner patterns) → live kernel service interaction (NFSd 2049, io_uring, futex) → runtime classification.
+- Strong runtime analysis capability via Lua scripting + targeted memory dumping (`live_dump.bin`, `oep_dump.bin`, `unpacked_fast.bin`) + tracing.
+- Broad surface coverage (kernel, eBPF rootkits, UEFI implants, Zig payloads, neural components, web dashboard) in a single coherent project.
+- Docker integration completed with zero cost using only open tools.
+
+### Hard Truths
+The three "VULNERABLE" flags from the earlier run indicate the test harness successfully exercised code paths and received observable kernel responses. They do **not** constitute proof of reliable exploits against a modern hardened kernel. The gap between "triggered behavior" and "bypassing all mitigations + reliable primitive" remains large and requires deep, experience-based knowledge that cannot be fully automated or LLM-generated.
+
+ksmbd tests failing with "module not found" is purely environmental — Microsoft’s WSL kernel deliberately omits it. This is a meta-lesson: kernel `.config`, loaded modules, and build choices often dominate results more than validator logic.
+
+### Key Intellectual Insights
+1. LLMs are excellent at maintaining momentum, generating scaffolding across languages (Lua, Zig, C, shell), and suggesting creative connections. They are poor substitutes for the tactile feedback of actually running code against a live kernel.
+2. Runtime observation (your Lua + dump infrastructure) beats pure static analysis for learning. The `trace.txt`, `real_output.txt`, and binary dumps contain the real signal.
+3. Scope breadth vs. depth trade-off is real. The project contains many valuable threads. Future iterations benefit from declaring a primary axis (e.g. "Runtime Kernel Analysis via Lua") and treating implants/C2/neural pieces as satellite experiments.
+4. Linux kernel really does have Perl-like surprises ("more than one way to do it"). The validation suite exposed some of them in a controlled way.
+5. Docker + privileged containers + volume mounts give excellent reproducibility for userspace tooling and tracing, even if the kernel itself is shared with WSL.
+
+### Recommended Path Forward
+- Capture fresh output from `./run_all_validators.lua` inside Docker.
+- Mine the resulting logs/dumps for deeper patterns.
+- Add Linux kernel selftests (`tools/testing/selftests`) and LKDTM (Linux Kernel Dump Test Module) for more principled testing than custom validators.
+- Consider moving heavier kernel work to a proper QEMU VM with vanilla mainline kernel for better debuggability.
+
+This project has permanently increased my intuition about kernel attack surfaces, dynamic instrumentation, and the difference between research harnesses and production exploits. That alone makes the $0 investment worthwhile.
