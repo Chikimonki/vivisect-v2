@@ -1,0 +1,8 @@
+<svg width="1280" height="640" xmlns="http://www.w3.org/2000/svg">
+<rect width="1280" height="640" fill="#0B1220"/>
+<rect x="0" y="0" width="1280" height="640" fill="none" stroke="#1E3A5F" stroke-width="4"/>
+<text x="640" y="220" font-family="monospace" font-size="64" fill="#FF5252" text-anchor="middle" font-weight="bold">🔬 VIVISECT v2.0</text>
+<text x="640" y="300" font-family="sans-serif" font-size="32" fill="#FFFFFF" text-anchor="middle">Zero-budget kernel research — $0</text>
+<text x="640" y="360" font-family="monospace" font-size="20" fill="#B0BEC5" text-anchor="middle">Lua · Zig · eBPF · UEFI · Docker + WSL2</text>
+<text x="640" y="460" font-family="sans-serif" font-size="18" fill="#00E676" text-anchor="middle">Runtime analysis beats static guessing</text>
+</svg>
